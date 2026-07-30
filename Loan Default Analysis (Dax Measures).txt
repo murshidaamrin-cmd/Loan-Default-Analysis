@@ -1,0 +1,75 @@
+Dax Measure Table 1:
+
+1. Average Income by Employment type = 
+ CALCULATE(AVERAGE('public loan_data'[income]),ALLEXCEPT('public loan_data','public loan_data'[employment_type]))
+
+2. Average Loan by Age Group = 
+ AVERAGEX(VALUES('public loan_data'[Age Groups]),
+ AVERAGE('public loan_data'[loan_amount]))
+
+3. Default Loans = 
+CALCULATE(
+    COUNTROWS('public loan_data'),
+    'public loan_data'[default_flag]
+)
+
+4. Default Rate by Employment Type = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('public loan_data'),
+        'public loan_data'[default_flag] = 1
+    ),
+    COUNTROWS('public loan_data'),
+    0
+) * 100
+
+5. Default Rate by Year = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('public loan_data'),
+        'public loan_data'[default_flag] = 1
+    ),
+    COUNTROWS('public loan_data'),
+    0
+) * 100
+
+6. Loan Amount by Purpose = 
+ SUMX(FILTER('public loan_data',NOT(ISBLANK('public loan_data'[loan_amount]))),'public loan_data'[loan_amount])
+
+7. Total Loans = 
+COUNTROWS('public loan_data')
+
+Dax Mwasure Table 2:
+
+1. Average Loan Amt (High Credit) = 
+AVERAGEX(FILTER('public loan_data','public loan_data'[Credit Score Bins]="High"),'public loan_data'[loan_amount])
+
+2. Loans by Education type = 
+COUNTROWS(FILTER('public loan_data',NOT(ISBLANK('public loan_data'[loan_id]))))
+
+3. Median by Credit score bins = 
+MEDIANX('public loan_data','public loan_data'[loan_amount])
+
+4. Total Loan (Credit Bins) = 
+CALCULATE(SUM('public loan_data'[loan_amount]),'public loan_data'[Age Groups]="Adults",ALLEXCEPT('public loan_data','public loan_data'[age],'public loan_data'[Age Groups],'public loan_data'[credit_score],'public loan_data'[Credit Score Bins]))
+
+5. Total Loan (Middle Age Adults) = 
+SUMX(FILTER('public loan_data','public loan_data'[Age Groups]="Middle Age Adults"),'public loan_data'[loan_amount])
+
+Dax Measure Table 3:
+
+1. YOY Default Loans Change = 
+DIVIDE(
+      CALCULATE(COUNTROWS(FILTER('public loan_data','public loan_data'[default_flag]=1)),'public loan_data'[Year]=YEAR(MAX('public loan_data'[loan_date]))) - 
+      CALCULATE(COUNTROWS(FILTER('public loan_data','public loan_data'[default_flag]=1)),'public loan_data'[Year]=YEAR(MAX('public loan_data'[loan_date]))-1)
+      ,CALCULATE(COUNTROWS(FILTER('public loan_data','public loan_data'[default_flag]=1)),'public loan_data'[Year]=YEAR(MAX('public loan_data'[loan_date]))-1),0) * 100
+
+2. YOY Loan Amount Change = 
+DIVIDE(
+    CALCULATE(SUM('public loan_data'[loan_amount]),'public loan_data'[Year]=YEAR(MAX('public loan_data'[loan_date]))) -
+    CALCULATE(SUM('public loan_data'[loan_amount]),'public loan_data'[Year]=YEAR(MAX('public loan_data'[loan_date]))-1)
+
+    ,CALCULATE(SUM('public loan_data'[loan_amount]),'public loan_data'[Year]=YEAR(MAX('public loan_data'[loan_date]))-1),0) * 100
+
+3. YTD Loan Amount = 
+ CALCULATE(SUM('public loan_data'[loan_amount]),DATESYTD('public loan_data'[loan_date].[Date]),ALLEXCEPT('public loan_data','public loan_data'[Credit Score Bins],'public loan_data'[marital_status]))
