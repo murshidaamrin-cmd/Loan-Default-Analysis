@@ -1,184 +1,192 @@
-📊 Loan Default Analysis Dashboard
+# 📊 Loan Default Analysis Dashboard
 
-A comprehensive Loan Default Analysis Dashboard built using Power BI, PostgreSQL, Power Query, and DAX to analyze borrower demographics, loan distribution, default trends, financial risk, and year-over-year performance. The dashboard provides actionable insights into loan defaults across different customer segments using advanced data modeling and analytical calculations.
+<p align="center">
 
-📌 Project Overview
+**An End-to-End Banking Analytics Dashboard built using PostgreSQL, Power BI, Power Query, and DAX**
 
-This project focuses on analyzing loan applicant data to identify patterns influencing loan defaults. The dashboard helps understand borrower behavior by exploring loan purpose, employment type, credit score, income, age groups, marital status, and financial risk metrics.
+*Transforming raw loan data into actionable business insights through interactive visualizations and advanced analytics.*
 
-The project demonstrates end-to-end Business Intelligence workflow including:
+</p>
 
-Data Import & Database Management
-Data Cleaning & Transformation
-Data Modeling
-Advanced DAX Calculations
-Interactive Dashboard Design
-Business Insights Visualization
-🛠️ Tech Stack
-Technology	Purpose
-PostgreSQL	Data Storage & Management
-Power BI Desktop	Dashboard Development
-Power Query Editor	Data Cleaning & Transformation
-DAX	Data Analysis & Business Calculations
-GitHub	Project Version Control
-📂 Dataset Preparation
-Database
-Imported raw dataset into PostgreSQL.
-Verified data integrity after import.
-Connected PostgreSQL database with Power BI Desktop.
-Data Understanding
+---
 
-Performed detailed dataset analysis including:
+## 🚀 Project Overview
 
-Dataset description
-Column definitions
-Data type verification
-Null value identification
-Data profiling
-Data quality validation
-🔄 Data Transformation (Power Query)
+Financial institutions rely on data-driven insights to minimize lending risks and improve decision-making. This project analyzes historical loan application data to uncover borrower behavior, loan distribution, credit risk, and default trends.
 
-The following preprocessing steps were completed:
+From database integration to interactive reporting, this project demonstrates the complete Business Intelligence workflow using PostgreSQL, Power BI, Power Query, and advanced DAX.
 
-Verified column data types
-Dataset profiling
-Column distribution analysis
-Null value validation
-Data quality checks
-Data preparation for reporting
-🎨 Dashboard Design
+---
 
-Designed a professional multi-page Power BI dashboard.
+## 🎯 Objectives
 
-UI Improvements
-Custom report title
-Page formatting
-Shape insertion
-Consistent color theme
-Interactive visual layouts
-📊 Dashboard Pages
-Page 1 — Loan Default & Overview
+- Analyze loan distribution across different customer segments.
+- Identify factors contributing to loan defaults.
+- Compare financial risk across employment types.
+- Evaluate lending patterns using demographic data.
+- Track Year-over-Year loan performance.
+- Build an interactive dashboard for business users.
 
-Visualizations include:
+---
 
-Loan Amount by Purpose
-Average Income by Employment Type
-Default Rate (%) by Employment Type
-Average Loan Amount by Age Group
-Default Rate (%) by Year
-Page 2 — Applicant Demographics & Financial Profile
+# 🛠 Tech Stack
 
-Visualizations include:
+| Technology | Purpose |
+|------------|----------|
+| PostgreSQL | Database Management |
+| SQL | Data Import & Querying |
+| Power BI Desktop | Dashboard Development |
+| Power Query | Data Cleaning & Transformation |
+| DAX | Business Calculations |
+| GitHub | Version Control |
 
-Median Loan Amount by Credit Score Category
-Average Loan Amount by Age Group & Marital Status (Donut Chart)
-Total Loan (Adults) by Credit Score Categories
-Loan Amount (Middle Age Adults) by Mortgage/Dependents
-Number of Loans by Education Type
-Page 3 — Financial Risk Metrics
+---
 
-Visualizations include:
+# ⚙ Project Workflow
 
-YOY Loan Amount Change
-YOY Default Loan Change
-YTD Loan Amount by Credit Score & Marital Status
-Income Distribution Analysis
-Decomposition Tree
-📐 DAX Measures Implemented
+```text
+Raw Dataset
+      │
+      ▼
+ PostgreSQL Database
+      │
+      ▼
+ Power BI Desktop
+      │
+      ▼
+ Power Query
+(Data Cleaning & Profiling)
+      │
+      ▼
+ Data Modeling
+      │
+      ▼
+ Advanced DAX Measures
+      │
+      ▼
+ Interactive Dashboard
+```
 
-This project includes multiple advanced DAX calculations.
+---
 
-Loan Amount by Purpose
+# 📋 Data Preparation
 
-Functions Used:
+### Database
 
-SUMX()
-FILTER()
-NOT()
-ISBLANK()
-Average Income by Employment Type
+- Imported dataset into PostgreSQL
+- Connected PostgreSQL with Power BI
+- Validated imported records
 
-Functions Used:
+### Data Understanding
 
-CALCULATE()
-AVERAGE()
-ALLEXCEPT()
-Default Rate by Employment Type
+- Dataset Description
+- Column Definitions
+- Data Type Verification
+- Data Profiling
+- Column Distribution
+- Data Quality Validation
 
-Functions Used:
+### Power Query
 
-CALCULATE()
-COUNTROWS()
-DIVIDE()
-FILTER()
-ALL()
-ALLEXCEPT()
-Average Loan Amount by Age Group
+- Data Type Validation
+- Data Cleaning
+- Profiling
+- Column Statistics
+- Data Transformation
 
-Functions Used:
+---
 
-AVERAGE()
-AVERAGEX()
-VALUES()
-Default Rate by Year
+# 📊 Dashboard Overview
 
-Functions Used:
+## 📌 Page 1 — Loan Default Analysis
 
-CALCULATE()
-COUNTROWS()
-FILTER()
-DIVIDE()
-ALLEXCEPT()
-Median Loan Amount by Credit Score
+### Visualizations
 
-Functions Used:
+- Loan Amount by Purpose
+- Average Income by Employment Type
+- Default Rate by Employment Type
+- Average Loan Amount by Age Group
+- Default Rate by Year
 
-MEDIANX()
+### DAX Measures
 
-Validated the calculated median against the dataset to ensure accuracy.
+- SUMX()
+- FILTER()
+- CALCULATE()
+- COUNTROWS()
+- DIVIDE()
+- ALLEXCEPT()
+- AVERAGE()
+- AVERAGEX()
 
-Total Loan (Adults) by Credit Score Categories
+---
 
-Functions Used:
+## 👥 Page 2 — Customer Financial Profile
 
-CALCULATE()
-AVERAGEX()
-SUM()
-Decomposition Tree
+### Visualizations
 
-Functions Used:
+- Median Loan Amount by Credit Score
+- Average Loan by Age Group & Marital Status
+- Loan Amount by Credit Score Category
+- Mortgage & Dependents Analysis
+- Education-wise Loan Distribution
 
-SWITCH()
-Year-over-Year Analysis
+### DAX Measures
 
-Created custom DAX measures for:
+- MEDIANX()
+- CALCULATE()
+- AVERAGEX()
+- SUM()
 
-YOY Loan Amount Change
-YOY Default Loan Change
-📈 Key Business Insights
+---
 
-The dashboard enables analysis of:
+## 📈 Page 3 — Financial Risk Analytics
 
-Loan distribution by purpose
-Default rates across employment types
-Income comparison among employment categories
-Loan amount by age groups
-Credit score impact on loan amount
-Education-wise loan distribution
-Mortgage and dependency influence
-Marital status vs loan trends
-Year-over-year loan performance
-Year-over-year default rate trends
-Financial risk segmentation
-Income contribution analysis
-📸 Dashboard Preview
-Loan Default & Overview
+### Visualizations
 
-Applicant Demographics & Financial Profile
+- Year-over-Year Loan Amount
+- Year-over-Year Default Loans
+- YTD Loan Analysis
+- Income Analysis
+- Decomposition Tree
 
-Financial Risk Metrics
+### DAX Measures
 
-📁 Project Structure
+- SWITCH()
+- Time Intelligence DAX
+- CALCULATE()
+- DATE Functions
+
+---
+
+# 🧮 DAX Functions Implemented
+
+| Category | Functions |
+|----------|-----------|
+| Aggregation | SUM, SUMX, AVERAGE, AVERAGEX, MEDIANX |
+| Filter Context | FILTER, ALL, ALLEXCEPT, VALUES |
+| Logical | SWITCH, NOT, ISBLANK |
+| Mathematical | DIVIDE |
+| Row Counting | COUNTROWS |
+| Time Intelligence | YOY & YTD Measures |
+
+---
+
+
+# 💼 Key Business Insights
+
+- Home loans represent the largest share of total loan amount.
+- Employment type significantly influences default rates.
+- Adults receive higher average loan amounts than other age groups.
+- Credit score has a direct impact on loan approval and loan amount.
+- Year-over-Year analysis reveals changes in lending patterns.
+- Financial risk drivers can be explored interactively using the Decomposition Tree.
+
+---
+
+# 📁 Repository Structure
+
+```text
 Loan-Default-Analysis/
 │
 ├── Dataset/
@@ -191,35 +199,65 @@ Loan-Default-Analysis/
 │   └── Loan Default Analysis.pbix
 │
 ├── Images/
-│   ├── Page 1 (Loan Default Analysis).png
-│   ├── Page 2 (Loan Default Analysis).png
-│   └── Page 3 (Loan Default Analysis).png
+│   ├── Dashboard_Page1.png
+│   ├── Dashboard_Page2.png
+│   └── Dashboard_Page3.png
 │
 ├── README.md
-│
 └── LICENSE
-🚀 Skills Demonstrated
-PostgreSQL Database Management
-SQL Data Import
-Power Query Data Transformation
-Data Cleaning
-Data Profiling
-Data Modeling
-Advanced DAX
-Business Intelligence
-Dashboard Design
-Data Visualization
-Financial Analytics
-Risk Analysis
-KPI Development
-Interactive Reporting
-GitHub Documentation
-⭐ Project Highlights
-✅ End-to-End Business Intelligence Project
-✅ PostgreSQL Integration with Power BI
-✅ Professional Multi-Page Dashboard
-✅ Advanced DAX Calculations
-✅ Interactive Visualizations
-✅ Financial Risk & Default Analysis
-✅ Clean UI with Business-Oriented Design
-✅ Real-World Banking Analytics Use Case
+```
+
+---
+
+# 🎯 Skills Demonstrated
+
+✔ PostgreSQL
+
+✔ SQL
+
+✔ Power BI Desktop
+
+✔ Power Query
+
+✔ Data Cleaning
+
+✔ Data Profiling
+
+✔ Data Modeling
+
+✔ Advanced DAX
+
+✔ Financial Analytics
+
+✔ Risk Analysis
+
+✔ KPI Development
+
+✔ Interactive Dashboard Design
+
+✔ Business Intelligence
+
+✔ Data Visualization
+
+---
+
+# ⭐ Project Highlights
+
+- End-to-End Business Intelligence Solution
+- PostgreSQL Database Integration
+- Advanced DAX Calculations
+- Interactive Multi-Page Dashboard
+- Banking & Financial Risk Analysis
+- Professional Dashboard Design
+- Business-Oriented KPIs
+- Interactive Data Exploration
+
+---
+
+# 👩‍💻 Author
+
+**Murshida Amrin**
+
+**Aspiring Data Analyst | Power BI | SQL | PostgreSQL | Python**
+
+If you found this project interesting, consider giving it a ⭐ to support the repository.
